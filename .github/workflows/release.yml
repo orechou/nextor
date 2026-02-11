@@ -10,27 +10,10 @@ permissions:
 
 jobs:
   release:
-    strategy:
-      fail-fast: false
-      matrix:
-        platform:
-          - os: macos-latest
-            args: --target universal-apple-darwin
-          - os: ubuntu-latest
-            args: --target x86_64-unknown-linux-gnu
-          - os: windows-latest
-            args: --target x86_64-pc-windows-msvc
-
-    runs-on: ${{ matrix.platform.os }}
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Install dependencies (Ubuntu only)
-        if: matrix.platform.os == 'ubuntu-latest'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
 
       - name: Rust setup
         uses: dtolnay/rust-toolchain@stable
@@ -54,4 +37,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: ${{ matrix.platform.args }}
+          args: --target universal-apple-darwin
