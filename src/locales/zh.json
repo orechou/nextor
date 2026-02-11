@@ -1,0 +1,136 @@
+{
+  "app": {
+    "title": "Nextor",
+    "description": "一个现代化的 Markdown 编辑器"
+  },
+  "editor": {
+    "title": "编辑器",
+    "preview": "预览",
+    "split": "分栏视图",
+    "source": "仅编辑"
+  },
+  "toolbar": {
+    "bold": "粗体",
+    "italic": "斜体",
+    "heading": "标题",
+    "link": "链接",
+    "image": "图片",
+    "code": "代码",
+    "table": "表格"
+  },
+  "menu": {
+    "file": "文件",
+    "edit": "编辑",
+    "view": "视图",
+    "help": "帮助",
+    "new": "新建",
+    "open": "打开",
+    "save": "保存",
+    "saveAs": "另存为",
+    "export": "导出",
+    "export_wechat": "微信公众号",
+    "export_html": "HTML (网页)",
+    "export_pdf": "PDF",
+    "openFolder": "打开文件夹",
+    "closeFolder": "关闭文件夹",
+    "viewEditor": "仅编辑器",
+    "viewSplit": "分栏视图",
+    "viewPreview": "仅预览",
+    "toggleFileExplorer": "切换文件浏览器",
+    "togglePreviewPanel": "切换预览面板",
+    "theme": "主题",
+    "themeSystem": "跟随系统",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "language": "语言",
+    "presentation": "进入演示模式",
+    "about": "关于 Nextor",
+    "documentation": "文档",
+    "reportIssue": "报告问题"
+  },
+  "export": {
+    "wechat_title": "导出到微信公众号",
+    "style_theme": "样式主题",
+    "themes": {
+      "minimal": "简约",
+      "minimal_desc": "简洁纯净的设计风格",
+      "colorful": "多彩",
+      "colorful_desc": "鲜艳色彩，醒目标题",
+      "dark": "深色",
+      "dark_desc": "护眼深色主题",
+      "elegant": "优雅",
+      "elegant_desc": "经典衬线字体",
+      "modern": "现代",
+      "modern_desc": "现代卡片式布局",
+      "business": "商务",
+      "business_desc": "专业商务风格",
+      "tech": "技术",
+      "tech_desc": "开发者专用设计"
+    },
+    "include_title": "包含文章标题",
+    "copy_clipboard": "复制到剪贴板",
+    "save_file": "保存为文件",
+    "sample_title": "文章标题",
+    "sample_text": "这是内容预览效果..."
+  },
+  "preview": {
+    "normal_mode": "正常预览",
+    "wechat_mode": "微信预览"
+  },
+  "fileExplorer": {
+    "new_file_title": "新建文件",
+    "file_name": "文件名",
+    "filename_placeholder": "请输入文件名",
+    "create": "创建",
+    "delete": "删除",
+    "delete_file_title": "删除文件",
+    "delete_file_confirmation": "确定要删除此文件吗？",
+    "delete_file_warning": "此操作无法撤销。",
+    "extension_hint": "如果未提供扩展名，将自动添加 .md 扩展名",
+    "error_empty_filename": "文件名不能为空",
+    "error_invalid_chars": "文件名包含无效字符",
+    "error_file_exists": "已存在同名文件",
+    "search_placeholder": "搜索文件..."
+  },
+  "folder": {
+    "close": "关闭文件夹",
+    "add": "打开另一个文件夹",
+    "delete": "删除文件夹"
+  },
+  "contextMenu": {
+    "deleteFile": "删除文件",
+    "deleteFolder": "删除文件夹"
+  },
+  "emptyEditor": {
+    "title": "未打开文件",
+    "description": "打开文件开始编辑，或创建新文件"
+  },
+  "common": {
+    "cancel": "取消"
+  },
+  "statusBar": {
+    "words": "字数",
+    "chars": "字符",
+    "lines": "行数"
+  },
+  "findReplace": {
+    "find": "查找",
+    "replace": "替换",
+    "replaceAll": "全部替换",
+    "caseSensitive": "区分大小写",
+    "wholeWord": "全字匹配",
+    "useRegex": "正则表达式",
+    "noResults": "未找到结果",
+    "resultCount": "{count} / {total}"
+  },
+  "toc": {
+    "title": "目录",
+    "noHeadings": "文档中没有标题"
+  },
+  "wikiLink": {
+    "openFile": "打开文件: {file}"
+  },
+  "settings": {
+    "title": "设置"
+  }
+}

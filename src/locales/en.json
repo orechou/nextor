@@ -1,0 +1,136 @@
+{
+  "app": {
+    "title": "Nextor",
+    "description": "A modern Markdown editor"
+  },
+  "editor": {
+    "title": "Editor",
+    "preview": "Preview",
+    "split": "Split View",
+    "source": "Source Only"
+  },
+  "toolbar": {
+    "bold": "Bold",
+    "italic": "Italic",
+    "heading": "Heading",
+    "link": "Link",
+    "image": "Image",
+    "code": "Code",
+    "table": "Table"
+  },
+  "menu": {
+    "file": "File",
+    "edit": "Edit",
+    "view": "View",
+    "help": "Help",
+    "new": "New",
+    "open": "Open",
+    "save": "Save",
+    "saveAs": "Save As",
+    "export": "Export",
+    "export_wechat": "WeChat Official Account",
+    "export_html": "HTML (Web)",
+    "export_pdf": "PDF",
+    "openFolder": "Open Folder",
+    "closeFolder": "Close Folder",
+    "viewEditor": "Editor Only",
+    "viewSplit": "Split View",
+    "viewPreview": "Preview Only",
+    "toggleFileExplorer": "Toggle File Explorer",
+    "togglePreviewPanel": "Toggle Preview Panel",
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "language": "Language",
+    "presentation": "Enter Presentation",
+    "about": "About Nextor",
+    "documentation": "Documentation",
+    "reportIssue": "Report Issue"
+  },
+  "export": {
+    "wechat_title": "Export to WeChat Official Account",
+    "style_theme": "Style Theme",
+    "themes": {
+      "minimal": "Minimal",
+      "minimal_desc": "Clean and simple",
+      "colorful": "Colorful",
+      "colorful_desc": "Vibrant colors",
+      "dark": "Dark",
+      "dark_desc": "Easy on the eyes",
+      "elegant": "Elegant",
+      "elegant_desc": "Classic serif",
+      "modern": "Modern",
+      "modern_desc": "Card-style layout",
+      "business": "Business",
+      "business_desc": "Professional style",
+      "tech": "Tech",
+      "tech_desc": "Developer focused"
+    },
+    "include_title": "Include article title",
+    "copy_clipboard": "Copy to Clipboard",
+    "save_file": "Save as File",
+    "sample_title": "Article Title",
+    "sample_text": "Content preview..."
+  },
+  "preview": {
+    "normal_mode": "Normal Preview",
+    "wechat_mode": "WeChat Preview"
+  },
+  "fileExplorer": {
+    "new_file_title": "New File",
+    "file_name": "File Name",
+    "filename_placeholder": "Enter file name",
+    "create": "Create",
+    "delete": "Delete",
+    "delete_file_title": "Delete File",
+    "delete_file_confirmation": "Are you sure you want to delete this file?",
+    "delete_file_warning": "This action cannot be undone.",
+    "extension_hint": ".md extension will be added automatically if not provided",
+    "error_empty_filename": "File name cannot be empty",
+    "error_invalid_chars": "File name contains invalid characters",
+    "error_file_exists": "A file with this name already exists",
+    "search_placeholder": "Search files..."
+  },
+  "folder": {
+    "close": "Close folder",
+    "add": "Open another folder",
+    "delete": "Delete folder"
+  },
+  "contextMenu": {
+    "deleteFile": "Delete file",
+    "deleteFolder": "Delete folder"
+  },
+  "emptyEditor": {
+    "title": "No file open",
+    "description": "Open a file to start editing, or create a new one"
+  },
+  "common": {
+    "cancel": "Cancel"
+  },
+  "statusBar": {
+    "words": "Words",
+    "chars": "Chars",
+    "lines": "Lines"
+  },
+  "findReplace": {
+    "find": "Find",
+    "replace": "Replace",
+    "replaceAll": "Replace All",
+    "caseSensitive": "Aa",
+    "wholeWord": "Whole Word",
+    "useRegex": "Regex",
+    "noResults": "No results",
+    "resultCount": "{count} of {total}"
+  },
+  "toc": {
+    "title": "Table of Contents",
+    "noHeadings": "No headings in document"
+  },
+  "wikiLink": {
+    "openFile": "Open file: {file}"
+  },
+  "settings": {
+    "title": "Settings"
+  }
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1024" height="1024"
+     viewBox="0 0 1024 1024"
+     fill="none">
+
+  <!-- Background (solid pale yellow) -->
+  <rect x="64" y="64" width="896" height="896" rx="210" fill="#FFE9A6"/>
+
+  <!-- Left blue bar -->
+  <rect x="270" y="250" width="150" height="524" rx="70" fill="#0A84FF"/>
+
+  <!-- Right blue bar -->
+  <rect x="604" y="250" width="150" height="524" rx="70" fill="#0A84FF"/>
+
+  <!-- Center green ">" prompt (centered between bars) -->
+  <path d="
+    M421 390
+    C409 372 423 350 447 350
+    C455 350 463 352 471 356
+    L591 424
+    C615 438 615 470 591 484
+    L471 552
+    C463 556 455 558 447 558
+    C423 558 409 536 421 518
+    L505 454
+    L421 390
+    Z"
+    fill="#32D74B"/>
+
+</svg>
