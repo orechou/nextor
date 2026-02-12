@@ -92,8 +92,6 @@ export const CodeMirrorEditor = forwardRef<CodeMirrorRef, CodeMirrorProps>(funct
         }
 
         update(update: ViewUpdate) {
-          // Check if this is a viewport change (scroll) or document change
-          const isViewportChange = update.viewportChanged || update.geometryChanged
           const isDocChange = update.docChanged
 
           // If document changed, reset our tracking state and ignore updates briefly
