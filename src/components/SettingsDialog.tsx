@@ -14,6 +14,12 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
   const [selectedTheme, setSelectedTheme] = useState<Theme>(theme)
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language)
 
+  const handleOpenPrivacyPolicy = async () => {
+    // Open privacy policy in default browser
+    const shell = await import('@tauri-apps/plugin-shell')
+    await shell.open('https://github.com/orechou/nextor/blob/main/docs/privacy-policy.md')
+  }
+
   // Sync local state with actual theme when dialog opens
   useEffect(() => {
     if (open) {
@@ -133,6 +139,16 @@ export function SettingsDialog({ open, onClose }: SettingsDialogProps) {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Privacy Policy Link */}
+          <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+            <button
+              onClick={handleOpenPrivacyPolicy}
+              className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 underline"
+            >
+              {t('settings.privacyPolicy') || 'Privacy Policy'}
+            </button>
           </div>
         </div>
 

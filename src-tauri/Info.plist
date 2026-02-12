@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Network usage description -->
+    <key>NSNetworkUsageDescription</key>
+    <string>用于加载 Mermaid 图表和更新内容</string>
+
+    <!-- Folder access descriptions -->
+    <key>NSDocumentsFolderUsageDescription</key>
+    <string>用于打开和保存 Markdown 文档</string>
+
+    <key>NSDownloadsFolderUsageDescription</key>
+    <string>用于保存导出的文件</string>
+
+    <key>NSDesktopFolderUsageDescription</key>
+    <string>用于打开和保存 Markdown 文档</string>
+
+    <!-- App Transport Security -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <false/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>cdn.jsdelivr.net</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>*.mermaid.ink</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+</dict>
+</plist>

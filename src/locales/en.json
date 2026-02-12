@@ -131,6 +131,7 @@
     "openFile": "Open file: {file}"
   },
   "settings": {
-    "title": "Settings"
+    "title": "Settings",
+    "privacyPolicy": "Privacy Policy"
   }
 }

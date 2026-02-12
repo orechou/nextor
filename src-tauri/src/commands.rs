@@ -1,12 +1,16 @@
-use tauri::{AppHandle, Manager, State, Theme};
+use tauri::{AppHandle, Manager, Theme, State};
+use tauri::Wry;
+
+#[cfg(feature = "devtools")]
 use std::sync::Mutex;
 
+#[cfg(feature = "devtools")]
 pub struct DevtoolsState {
     pub open: Mutex<bool>,
 }
 
 #[tauri::command]
-pub async fn set_window_theme(app_handle: AppHandle, theme: String) -> Result<(), String> {
+pub async fn set_window_theme(app_handle: AppHandle<Wry>, theme: String) -> Result<(), String> {
     let window_theme = match theme.as_str() {
         "dark" => Some(Theme::Dark),
         "light" => Some(Theme::Light),
@@ -20,8 +24,10 @@ pub async fn set_window_theme(app_handle: AppHandle, theme: String) -> Result<()
     Ok(())
 }
 
+// Devtools command is only available when the devtools feature is enabled
+#[cfg(feature = "devtools")]
 #[tauri::command]
-pub fn toggle_devtools(app_handle: AppHandle, state: State<DevtoolsState>) -> Result<(), String> {
+pub fn toggle_devtools(app_handle: AppHandle<Wry>, state: State<DevtoolsState>) -> Result<(), String> {
     if let Some(window) = app_handle.get_webview_window("main") {
         let mut is_open = state.open.lock().unwrap();
         if *is_open {

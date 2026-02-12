@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Nextor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "identifier": "com.nextor.app",
   "build": {
     "beforeDevCommand": "pnpm dev",
@@ -35,6 +35,11 @@
       "icons/32x32.png",
       "icons/32x32@2x.png",
       "icons/icon.icns"
-    ]
+    ],
+    "macOS": {
+      "entitlements": "entitlements.plist",
+      "infoPlist": "Info.plist",
+      "hardenedRuntime": true
+    }
   }
 }

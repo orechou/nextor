@@ -131,6 +131,7 @@
     "openFile": "打开文件: {file}"
   },
   "settings": {
-    "title": "设置"
+    "title": "设置",
+    "privacyPolicy": "隐私政策"
   }
 }
