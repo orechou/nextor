@@ -53,19 +53,20 @@ export function Editor({ content, onChange, viewMode: externalViewMode, leftSide
 
   // Reset scroll positions when content changes
   useEffect(() => {
+    console.log('[Editor] Content changed, resetting scroll positions')
+    // Use a small delay to ensure DOM has updated
     const timer = setTimeout(() => {
-      // Reset the scroll sync plugin BEFORE resetting scroll position
-      if (codeMirrorRef.current?.resetSync) {
-        codeMirrorRef.current.resetSync()
-      }
-      // Reset scroll positions after resetting sync
+      // Reset scroll positions
+      // Note: We don't call resetSync anymore because the plugin auto-detects doc changes
       if (previewRef.current) {
+        console.log('[Editor] Resetting preview scroll')
         previewRef.current.scrollToTop?.()
       }
       if (codeMirrorRef.current?.scrollToTop) {
+        console.log('[Editor] Resetting editor scroll')
         codeMirrorRef.current.scrollToTop()
       }
-    }, 0)
+    }, 50)
 
     return () => clearTimeout(timer)
   }, [content])

@@ -69,7 +69,6 @@ export const Preview = forwardRef<PreviewHandle, PreviewProps>(
   const { resolvedTheme } = useTheme()
   const internalRef = useRef<HTMLDivElement>(null)
   const lineElementsMap = useRef<LineElementsMap>(new Map())
-  const lastScrollTime = useRef<number>(0)
 
   // Handle footnote link clicks to prevent whitespace at bottom
   const handleFootnoteClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -178,14 +177,7 @@ export const Preview = forwardRef<PreviewHandle, PreviewProps>(
   // Expose imperative handle
   useImperativeHandle(ref, () => ({
     scrollToLine: (lineNumber: number) => {
-      const now = performance.now()
-
-      // Throttle scroll updates
-      if (now - lastScrollTime.current < EDITOR.SCROLL_THROTTLE_MS) {
-        return
-      }
-      lastScrollTime.current = now
-
+      console.log('[Preview] scrollToLine called:', lineNumber)
       let element = lineElementsMap.current.get(lineNumber)
 
       // If exact line not found, find the nearest element
@@ -202,35 +194,48 @@ export const Preview = forwardRef<PreviewHandle, PreviewProps>(
       }
 
       if (element && internalRef.current) {
-        // Calculate the scroll position to align element to top
-        const containerRect = internalRef.current.getBoundingClientRect()
-        const elementRect = element.getBoundingClientRect()
-        const scrollTop = internalRef.current.scrollTop + elementRect.top - containerRect.top
+        // Get the scroll container (parent of internalRef)
+        const scrollContainer = internalRef.current.parentElement
+        if (!scrollContainer) return
 
-        // Use direct scrollTop manipulation to avoid layout recalculation
-        internalRef.current.scrollTo({
-          top: scrollTop,
-          behavior: 'smooth'
-        })
+        // Calculate the scroll position to align element to top
+        const containerRect = scrollContainer.getBoundingClientRect()
+        const elementRect = element.getBoundingClientRect()
+        const currentScrollTop = scrollContainer.scrollTop
+        const scrollTop = currentScrollTop + elementRect.top - containerRect.top
+
+        console.log('[Preview] Scrolling to line:', lineNumber, 'scrollTop:', scrollTop)
+
+        // Use direct scrollTop manipulation for instant, responsive scroll
+        scrollContainer.scrollTop = scrollTop
       }
     },
     scrollToTop: () => {
+      console.log('[Preview] scrollToTop called')
       if (internalRef.current) {
-        internalRef.current.scrollTop = 0
+        // Get the scroll container (parent of internalRef)
+        const scrollContainer = internalRef.current.parentElement
+        if (scrollContainer) {
+          scrollContainer.scrollTop = 0
+        }
       }
     },
     scrollToPercentage: (percentage: number) => {
+      console.log('[Preview] scrollToPercentage called:', percentage)
       if (internalRef.current) {
-        const scrollDOM = internalRef.current
-        const scrollHeight = scrollDOM.scrollHeight
-        const clientHeight = scrollDOM.clientHeight
+        // Get the scroll container (parent of internalRef)
+        const scrollContainer = internalRef.current.parentElement
+        if (!scrollContainer) return
+
+        const scrollHeight = scrollContainer.scrollHeight
+        const clientHeight = scrollContainer.clientHeight
         const maxScroll = scrollHeight - clientHeight
         const targetScrollTop = maxScroll * percentage
 
-        scrollDOM.scrollTo({
-          top: targetScrollTop,
-          behavior: 'smooth'
-        })
+        console.log('[Preview] Scrolling to percentage:', percentage, 'scrollTop:', targetScrollTop)
+
+        // Use direct scrollTop assignment for instant, responsive scroll
+        scrollContainer.scrollTop = targetScrollTop
       }
     }
   }))
