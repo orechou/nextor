@@ -12,6 +12,10 @@
   专为追求简洁而强大写作环境的作者和开发者设计。
 </p>
 
+<p align="center">
+  <a href="README.md">English</a>
+</p>
+
 ## 功能特性
 
 ### 微信公众号一键导出（核心亮点）
@@ -75,6 +79,19 @@ Nextor 提供专业的微信公众号导出功能，内置 **7 种精美主题**
 - **语言** - 简体中文和英文
 
 ## 安装
+
+### Homebrew (macOS)
+
+```bash
+# 添加 tap 仓库
+brew tap orechou/homebrew
+
+# 安装 Nextor
+brew install nextor
+
+# 升级到最新版本
+brew upgrade nextor
+```
 
 ### 前置要求
 

@@ -12,6 +12,10 @@
   Designed for writers and developers who need a clean yet powerful writing environment.
 </p>
 
+<p align="center">
+  <a href="README.zh-CN.md">中文</a>
+</p>
+
 ## Features
 
 ### WeChat Official Account Export (Highlight)
@@ -75,6 +79,19 @@ Nextor provides a dedicated export feature for WeChat Official Accounts with **7
 - **Languages** - English and Chinese (Simplified)
 
 ## Installation
+
+### Homebrew (macOS)
+
+```bash
+# Tap the repository
+brew tap orechou/homebrew
+
+# Install Nextor
+brew install nextor
+
+# Upgrade to the latest version
+brew upgrade nextor
+```
 
 ### Prerequisites
 
